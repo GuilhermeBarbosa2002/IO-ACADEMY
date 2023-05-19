@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "nome": "Dell Xtreme 270",
+      "categoria": "Laptops",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 4,
+      "preco": "$3,999",
+      "codigo": "#### 8787",
+      "cartao": "VISA Platinum"
+    },
+    {
+      "id": 2,
+      "nome": "Produto 2",
+      "categoria": "Categoria 2",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 3,
+      "preco": "$99",
+      "codigo": "#### 1234",
+      "cartao": "MasterCard"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "preco": "$199",
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+        "id": 4,
+        "nome": "Produto 3",
+        "categoria": "Categoria 3",
+        "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+        "avaliacao": 5,
+        "preco": "$199",
+        "codigo": "#### 5678",
+        "cartao": "American Express"
+      }
+  ]
+  
