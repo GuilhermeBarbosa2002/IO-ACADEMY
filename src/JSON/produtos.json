@@ -1,0 +1,93 @@
+[
+  {
+    "id": 3,
+    "nome": "Produto 3",
+    "categoria": "Categoria 3",
+    "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+    "avaliacao": 5,
+    "pontos": 2,
+    "codigo": "#### 5678",
+    "cartao": "American Express"
+  },
+    {
+      "id": 2,
+      "nome": "Produto 2",
+      "categoria": "Categoria 2",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 3,
+      "pontos": 5,
+      "codigo": "#### 1234",
+      "cartao": "MasterCard"
+    },
+    {
+      "id": 3,
+      "nome": "Iphone 11",
+      "categoria": "Categoria 3",
+      "imagem": "https://www.worten.pt/i/6b8432ba04e8bbd809a94939395c082041cab185.jpg",
+      "avaliacao": 5,
+      "pontos": 6,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "pontos": 7,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "pontos": 8,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "pontos": 10,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "pontos": 12,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3",
+      "categoria": "Categoria 3",
+      "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+      "avaliacao": 5,
+      "pontos": 13,
+      "codigo": "#### 5678",
+      "cartao": "American Express"
+    },
+    {
+        "id": 4,
+        "nome": "Produto 3",
+        "categoria": "Categoria 3",
+        "imagem": "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/12.webp",
+        "avaliacao": 5,
+        "pontos": 14,
+        "codigo": "#### 5678",
+        "cartao": "American Express"
+      }
+  ]
+  
