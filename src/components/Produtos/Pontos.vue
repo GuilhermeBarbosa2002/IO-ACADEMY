@@ -40,6 +40,7 @@ export default {
     this.generateCodUTF8();
     this.points = localStorage.getItem('points') || 0;
     setInterval(this.incrementPoints, 6000);
+    setInterval(this.atualizarPontos, 100);
   },
   methods: {
     generateQRCode() {
@@ -58,8 +59,14 @@ export default {
       this.codUTF8 = randomCode;
     },
     incrementPoints() {
-      this.points++;
-      localStorage.setItem('points', this.points);
+      points = localStorage.getItem('points')
+      points++;
+      localStorage.setItem('points', points);
+      this.points = this.points;
+    },
+    atualizarPontos() {
+      let pontos = localStorage.getItem('points')
+      this.points = pontos;
     },
     handleQRCodeRead() {
       const qrCodeImg = this.$refs.qrCodeImg;

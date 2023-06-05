@@ -8,7 +8,7 @@
             <img :src="produto.imagem" class="card-img-top" alt="Imagem do Produto" style="height: 150px; object-fit: cover; padding-top: 5%;">
             <div class="card-body">
               <h5 class="card-title">{{ produto.nome }}</h5>
-              <p class="card-text">{{ produto.descricao }}</p>
+              <p class="card-text">{{ produto.pontos }}</p>
               
             </div>
           </div>
@@ -19,14 +19,12 @@
   </div>
 </template>
 
-
 <script>
-import produtosData from '../../JSON/produtos.json';
 import Pontos from './Pontos.vue';
 import ProductModal from './ProductModal.vue';
 
 export default {
-  components:{
+  components: {
     Pontos,
     ProductModal
   },
@@ -41,12 +39,7 @@ export default {
   },
 
   mounted() {
-    this.produtos = produtosData.map(produto => {
-      return {
-        ...produto,
-        disabled: true
-      };
-    });
+    this.fetchProdutos(); // Chama o método fetchProdutos ao montar o componente
     this.points = localStorage.getItem('points') || 0;
     this.startTimer();
   },
@@ -54,25 +47,39 @@ export default {
   methods: {
     startTimer() {
       this.timer = setInterval(() => {
-        this.points = localStorage.getItem('points')
+        this.points = localStorage.getItem('points');
         for (let i = 0; i < this.produtos.length; i++) {
           const produto = this.produtos[i];
           produto.disabled = this.points < produto.pontos;
         }
       }, 100);
     },
-  
+
+    fetchProdutos() {
+      fetch('http://127.0.0.1:1337/api/produtos')
+        .then(response => response.json())
+        .then(data => {
+          this.produtos = data.data.map(produto => ({
+            ...produto.attributes,
+            disabled: true
+          }));
+        })
+        .catch(error => {
+          console.error('Erro ao obter produtos:', error);
+        });
+    },
+
     openModal(produto) {
       if (!produto.disabled) {
         this.selectedProduct = produto;
         this.showModal = true;
       }
     },
-  
+
     closeModal() {
       this.showModal = false;
     }
-  },
+  }
 };
 </script>
 

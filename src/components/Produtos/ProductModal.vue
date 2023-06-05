@@ -6,7 +6,7 @@
         <h3>{{ produto.nome }}</h3>
         <img :src="produto.imagem" alt="Imagem do Produto">
         <p>{{ produto.categoria }}</p>
-        <button class="btn btn-success">Redimir</button>
+        <button class="btn btn-success" @click="descontarPontos(produto)">Redimir</button>
       </div>
     </div>
   </template>
@@ -26,6 +26,12 @@
     methods: {
       closeModal() {
         this.$emit('closeModal');
+      },
+      descontarPontos(produto){
+        let pontos = localStorage.getItem('points') || 0;
+        pontos = pontos - produto.pontos
+        localStorage.setItem('points', pontos);
+        alert("Foram descontados " + produto.pontos + " pontos.")
       }
     }
   };
