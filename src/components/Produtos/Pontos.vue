@@ -21,7 +21,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(faCircleInfo);
 
 // Importe a biblioteca qrcode-reader
-import QrCodeReader from 'qrcode-reader';
+import QRCodeReader from 'qrcode-reader';
+import jsQR from 'jsqr';
 
 export default {
   components: {
@@ -62,20 +63,26 @@ export default {
     },
     handleQRCodeRead() {
       const qrCodeImg = this.$refs.qrCodeImg;
-      
+
       // Crie uma nova instância de QrCodeReader
       const qrReader = new QrCodeReader();
-      
+
       // Configure a imagem do QR code
       qrReader.decode(qrCodeImg.src, (error, result) => {
-        alert("ola")
         if (error) {
           console.error('Erro ao ler o QR code:', error);
         } else {
           console.log('QR code lido:', result);
-          // Função para manipular a leitura do QR code
-          this.points += 10; // Incrementar 10 pontos
-          localStorage.setItem('points', this.points); // Atualizar a localStorage
+
+          // Use a biblioteca jsQR para decodificar os dados do QR code
+          const qrData = jsQR(result.imageData, result.width, result.height);
+          if (qrData) {
+            console.log('Dados do QR code:', qrData.data);
+            // Ação a ser executada quando o QR code é lido por outro dispositivo
+            this.points += 10; // Incrementar 10 pontos
+            localStorage.setItem('points', this.points); // Atualizar a localStorage
+            alert('QR code lido por outro dispositivo!'); // Exibir um alerta
+          }
         }
       });
     }
@@ -143,5 +150,4 @@ export default {
 .points-text span {
   margin-left: 5px;
 }
-
 </style>

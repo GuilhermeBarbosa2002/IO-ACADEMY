@@ -6,6 +6,7 @@
         <h3>{{ produto.nome }}</h3>
         <img :src="produto.imagem" alt="Imagem do Produto">
         <p>{{ produto.categoria }}</p>
+        <button class="btn btn-success">Redimir</button>
       </div>
     </div>
   </template>

@@ -5,10 +5,11 @@
       <div class="row">
         <div class="col-6" v-for="(produto, index) in produtos" :key="index">
           <div class="card" :class="{ 'disabled-card': produto.disabled }" style="border-radius: 15px; margin-bottom: 20px;" @click="openModal(produto)" :style="{ cursor: produto.disabled ? 'default' : 'pointer' }">
-            <img :src="produto.imagem" class="card-img-top" alt="Imagem do Produto" style="max-height: 100px; object-fit: cover;">
+            <img :src="produto.imagem" class="card-img-top" alt="Imagem do Produto" style="height: 150px; object-fit: cover; padding-top: 5%;">
             <div class="card-body">
               <h5 class="card-title">{{ produto.nome }}</h5>
               <p class="card-text">{{ produto.descricao }}</p>
+              
             </div>
           </div>
         </div>
@@ -83,5 +84,10 @@ export default {
 .disabled-card {
   opacity: 0.5;
   /* Apply desired styling to disabled cards */
+}
+
+.card{
+  margin-left: 5%;
+  margin-right: 5%;
 }
 </style>
