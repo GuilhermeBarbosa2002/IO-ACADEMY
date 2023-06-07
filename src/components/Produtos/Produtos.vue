@@ -1,15 +1,17 @@
+
+
 <template>
   <div>
     <Pontos></Pontos>
     <section style="background-color: #eee;">
       <div class="row">
         <div class="col-6" v-for="(produto, index) in produtos" :key="index">
-          <div class="card" :class="{ 'disabled-card': produto.disabled }" style="border-radius: 15px; margin-bottom: 20px;" @click="openModal(produto)" :style="{ cursor: produto.disabled ? 'default' : 'pointer' }">
-            <img :src="produto.imagem" class="card-img-top" alt="Imagem do Produto" style="height: 150px; object-fit: cover; padding-top: 5%;">
+          <div class="card" :class="{ 'disabled-card': produto.disabled }"  style="border-radius: 15px; margin-bottom: 20px;" @click="openModal(produto)">
+            <img :src="produto.attributes.imagem" class="card-img-top" alt="Imagem do Produto"
+              style="height: 150px; object-fit: cover; padding-top: 5%;" />
             <div class="card-body">
-              <h5 class="card-title">{{ produto.nome }}</h5>
-              <p class="card-text">{{ produto.pontos }}</p>
-              
+              <h5 class="card-title">{{ produto.attributes.nome }}</h5>
+              <p>{{ produto.attributes.categoria.data.attributes.nome }}</p>
             </div>
           </div>
         </div>
@@ -50,17 +52,17 @@ export default {
         this.points = localStorage.getItem('points');
         for (let i = 0; i < this.produtos.length; i++) {
           const produto = this.produtos[i];
-          produto.disabled = this.points < produto.pontos;
+          produto.disabled = this.points < produto.attributes.pontos;
         }
       }, 100);
     },
 
     fetchProdutos() {
-      fetch('http://127.0.0.1:1337/api/produtos')
+      fetch('http://127.0.0.1:1337/api/produtos?populate=*')
         .then(response => response.json())
         .then(data => {
           this.produtos = data.data.map(produto => ({
-            ...produto.attributes,
+            ...produto,
             disabled: true
           }));
         })

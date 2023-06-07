@@ -10,7 +10,7 @@
       <div class="nav-item">
         <router-link to="/pontos-ofertas" class="nav-link" active-class="active-link">
           <font-awesome-icon icon="tags" />
-          <span>Pontos e Ofertas</span>
+          <span>Pontos</span>
         </router-link>
       </div>
       <div class="nav-item">
@@ -20,9 +20,9 @@
         </router-link>
       </div>
       <div class="nav-item">
-        <router-link to="/minha-conta" class="nav-link" active-class="active-link">
+        <router-link to="/gerir-produtos" class="nav-link" active-class="active-link">
           <font-awesome-icon icon="user" />
-          <span>Conta</span>
+          <span>Gerir Produtos</span>
         </router-link>
       </div>
     </div>

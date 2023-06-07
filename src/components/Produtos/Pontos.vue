@@ -38,7 +38,10 @@ export default {
   mounted() {
     this.generateQRCode();
     this.generateCodUTF8();
-    this.points = localStorage.getItem('points') || 0;
+    if (localStorage.getItem("points") == null) {
+      localStorage.setItem("points", 0);
+    }
+    this.points = localStorage.getItem("points")
     setInterval(this.incrementPoints, 6000);
     setInterval(this.atualizarPontos, 100);
   },
@@ -59,7 +62,7 @@ export default {
       this.codUTF8 = randomCode;
     },
     incrementPoints() {
-      points = localStorage.getItem('points')
+      let points = localStorage.getItem('points');
       points++;
       localStorage.setItem('points', points);
       this.points = this.points;
