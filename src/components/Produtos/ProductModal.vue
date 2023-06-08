@@ -9,7 +9,7 @@
       <br>
       <h5>{{ produto.attributes.categoria.data.attributes.nome }}</h5>
       <span>{{ produto.attributes.descricao }}</span>
-      <br> 
+      <br>
       <button class="btn btn-success" @click="descontarPontos(produto)">Redimir</button>
     </div>
   </div>
@@ -32,10 +32,29 @@ export default {
       this.$emit('closeModal');
     },
     descontarPontos(produto) {
-      let pontos = localStorage.getItem('points') || 0;
-      pontos = pontos - produto.attributes.pontos
-      localStorage.setItem('points', pontos);
-      alert("Foram descontados " + produto.attributes.pontos + " pontos.")
+      let produtoID = {
+        produto: produto.id
+      };
+      fetch("http://127.0.0.1:1337/api/trocas", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: produtoID }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Product submitted:", data);
+          let pontos = localStorage.getItem('points') || 0;
+          pontos = pontos - produto.attributes.pontos
+          localStorage.setItem('points', pontos);
+          alert("Foram descontados " + produto.attributes.pontos + " pontos.")
+
+        })
+        .catch((error) => {
+          console.error("Error submitting product:", error);
+        });
+
     }
   }
 };

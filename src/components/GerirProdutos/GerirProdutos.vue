@@ -140,7 +140,7 @@ export default {
 
       const downloadURL = await getDownloadURL(storageRef);
 
-      const productData = {
+      let productData = {
         nome: this.newProduct.nome,
         pontos: this.newProduct.pontos,
         descricao: this.newProduct.descricao,

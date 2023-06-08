@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Categorias from "./components/Categorias/Categorias.vue";
-import PontosOfertas from "./components/PontosOfertas/PontosOfertas.vue";
+import Registo from "./components/Registo/Registo.vue";
 import Produtos from "./components/Produtos/produtos.vue";
 import MinhaConta from "./components/GerirProdutos/GerirProdutos.vue";
 
 const routes = [
-  { path: '/pontos-ofertas', component: PontosOfertas },
+  { path: '/registo', component: Registo },
   { path: '/produtos', component: Produtos },
   { path: '/gerir-produtos', component: MinhaConta },
   { path: '/categorias', component: Categorias },

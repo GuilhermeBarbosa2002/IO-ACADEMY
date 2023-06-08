@@ -1,5 +1,5 @@
 <script>
-import Navbar from './components/navbar/NavBar.vue'; // Importe o componente da navbar
+import Navbar from './components/navBar/NavBar.vue'; // Importe o componente da navbar
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
