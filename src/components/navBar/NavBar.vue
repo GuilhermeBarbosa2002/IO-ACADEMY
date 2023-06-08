@@ -2,9 +2,9 @@
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container d-flex justify-content-around align-items-end">
       <div class="nav-item">
-        <router-link to="/novidades" class="nav-link" active-class="active-link">
+        <router-link to="/categorias" class="nav-link" active-class="active-link">
           <font-awesome-icon icon="newspaper" />
-          <span>Novidades</span>
+          <span>Categorias</span>
         </router-link>
       </div>
       <div class="nav-item">
